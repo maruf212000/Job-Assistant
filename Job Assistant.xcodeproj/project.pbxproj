@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		120D64162B55B3E500BDCB00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D64152B55B3E500BDCB00 /* AppDelegate.swift */; };
 		120D64182B55B3E500BDCB00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D64172B55B3E500BDCB00 /* SceneDelegate.swift */; };
-		120D641A2B55B3E500BDCB00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D64192B55B3E500BDCB00 /* ViewController.swift */; };
 		120D641D2B55B3E500BDCB00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120D641B2B55B3E500BDCB00 /* Main.storyboard */; };
 		120D641F2B55B3E600BDCB00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 120D641E2B55B3E600BDCB00 /* Assets.xcassets */; };
 		120D64222B55B3E600BDCB00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120D64202B55B3E600BDCB00 /* LaunchScreen.storyboard */; };
+		12A9A5B82B56C53200D007A1 /* JAChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A9A5B72B56C53200D007A1 /* JAChatViewController.swift */; };
+		12A9A5BB2B56C58100D007A1 /* JAChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A9A5BA2B56C58100D007A1 /* JAChatView.swift */; };
+		12A9A5BE2B56C79E00D007A1 /* JAChatTypingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A9A5BD2B56C79E00D007A1 /* JAChatTypingIndicatorView.swift */; };
+		12A9A5C32B56C89700D007A1 /* JAChatItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A9A5C22B56C89700D007A1 /* JAChatItemStore.swift */; };
+		12A9A5C52B56CC5800D007A1 /* JACommons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A9A5C42B56CC5800D007A1 /* JACommons.swift */; };
+		12A9A5C72B56D2D000D007A1 /* JAChatTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A9A5C62B56D2D000D007A1 /* JAChatTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		120D64122B55B3E500BDCB00 /* Job Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Job Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		120D64152B55B3E500BDCB00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		120D64172B55B3E500BDCB00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		120D64192B55B3E500BDCB00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		120D641C2B55B3E500BDCB00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		120D641E2B55B3E600BDCB00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		120D64212B55B3E600BDCB00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		120D64232B55B3E600BDCB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12A9A5B72B56C53200D007A1 /* JAChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAChatViewController.swift; sourceTree = "<group>"; };
+		12A9A5BA2B56C58100D007A1 /* JAChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAChatView.swift; sourceTree = "<group>"; };
+		12A9A5BD2B56C79E00D007A1 /* JAChatTypingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAChatTypingIndicatorView.swift; sourceTree = "<group>"; };
+		12A9A5C22B56C89700D007A1 /* JAChatItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAChatItemStore.swift; sourceTree = "<group>"; };
+		12A9A5C42B56CC5800D007A1 /* JACommons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JACommons.swift; sourceTree = "<group>"; };
+		12A9A5C62B56D2D000D007A1 /* JAChatTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAChatTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,44 @@
 		120D64142B55B3E500BDCB00 /* Job Assistant */ = {
 			isa = PBXGroup;
 			children = (
+				12A9A5B92B56C57200D007A1 /* Chat Views */,
 				120D64152B55B3E500BDCB00 /* AppDelegate.swift */,
 				120D64172B55B3E500BDCB00 /* SceneDelegate.swift */,
-				120D64192B55B3E500BDCB00 /* ViewController.swift */,
 				120D641B2B55B3E500BDCB00 /* Main.storyboard */,
 				120D641E2B55B3E600BDCB00 /* Assets.xcassets */,
 				120D64202B55B3E600BDCB00 /* LaunchScreen.storyboard */,
 				120D64232B55B3E600BDCB00 /* Info.plist */,
+				12A9A5B72B56C53200D007A1 /* JAChatViewController.swift */,
 			);
 			path = "Job Assistant";
+			sourceTree = "<group>";
+		};
+		12A9A5B92B56C57200D007A1 /* Chat Views */ = {
+			isa = PBXGroup;
+			children = (
+				12A9A5BF2B56C85A00D007A1 /* Chat Store */,
+				12A9A5BC2B56C77B00D007A1 /* Chat Components */,
+				12A9A5BA2B56C58100D007A1 /* JAChatView.swift */,
+				12A9A5C42B56CC5800D007A1 /* JACommons.swift */,
+			);
+			path = "Chat Views";
+			sourceTree = "<group>";
+		};
+		12A9A5BC2B56C77B00D007A1 /* Chat Components */ = {
+			isa = PBXGroup;
+			children = (
+				12A9A5BD2B56C79E00D007A1 /* JAChatTypingIndicatorView.swift */,
+				12A9A5C62B56D2D000D007A1 /* JAChatTextView.swift */,
+			);
+			path = "Chat Components";
+			sourceTree = "<group>";
+		};
+		12A9A5BF2B56C85A00D007A1 /* Chat Store */ = {
+			isa = PBXGroup;
+			children = (
+				12A9A5C22B56C89700D007A1 /* JAChatItemStore.swift */,
+			);
+			path = "Chat Store";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				120D641A2B55B3E500BDCB00 /* ViewController.swift in Sources */,
+				12A9A5C52B56CC5800D007A1 /* JACommons.swift in Sources */,
+				12A9A5B82B56C53200D007A1 /* JAChatViewController.swift in Sources */,
+				12A9A5C72B56D2D000D007A1 /* JAChatTextView.swift in Sources */,
+				12A9A5BB2B56C58100D007A1 /* JAChatView.swift in Sources */,
 				120D64162B55B3E500BDCB00 /* AppDelegate.swift in Sources */,
 				120D64182B55B3E500BDCB00 /* SceneDelegate.swift in Sources */,
+				12A9A5BE2B56C79E00D007A1 /* JAChatTypingIndicatorView.swift in Sources */,
+				12A9A5C32B56C89700D007A1 /* JAChatItemStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
