@@ -1,0 +1,6 @@
+## Build generated
+build/
+DerivedData/
+
+Job Assistant/EnvironmentVariables.swift
+Job Assistant/env-vars.sh

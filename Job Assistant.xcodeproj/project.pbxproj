@@ -18,6 +18,7 @@
 		12A9A5C32B56C89700D007A1 /* JAChatItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A9A5C22B56C89700D007A1 /* JAChatItemStore.swift */; };
 		12A9A5C52B56CC5800D007A1 /* JACommons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A9A5C42B56CC5800D007A1 /* JACommons.swift */; };
 		12A9A5C72B56D2D000D007A1 /* JAChatTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A9A5C62B56D2D000D007A1 /* JAChatTextView.swift */; };
+		12B2EA752B581C96006C934D /* EnvironmentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B2EA742B581C96006C934D /* EnvironmentVariables.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		12A9A5C22B56C89700D007A1 /* JAChatItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAChatItemStore.swift; sourceTree = "<group>"; };
 		12A9A5C42B56CC5800D007A1 /* JACommons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JACommons.swift; sourceTree = "<group>"; };
 		12A9A5C62B56D2D000D007A1 /* JAChatTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAChatTextView.swift; sourceTree = "<group>"; };
+		12B2EA732B581BEA006C934D /* env-vars.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "env-vars.sh"; sourceTree = "<group>"; };
+		12B2EA742B581C96006C934D /* EnvironmentVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariables.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 				120D64152B55B3E500BDCB00 /* AppDelegate.swift */,
 				120D64172B55B3E500BDCB00 /* SceneDelegate.swift */,
 				120D641B2B55B3E500BDCB00 /* Main.storyboard */,
+				12B2EA732B581BEA006C934D /* env-vars.sh */,
+				12B2EA742B581C96006C934D /* EnvironmentVariables.swift */,
 				120D641E2B55B3E600BDCB00 /* Assets.xcassets */,
 				120D64202B55B3E600BDCB00 /* LaunchScreen.storyboard */,
 				120D64232B55B3E600BDCB00 /* Info.plist */,
@@ -179,6 +184,7 @@
 			files = (
 				12A9A5C52B56CC5800D007A1 /* JACommons.swift in Sources */,
 				12A9A5B82B56C53200D007A1 /* JAChatViewController.swift in Sources */,
+				12B2EA752B581C96006C934D /* EnvironmentVariables.swift in Sources */,
 				12A9A5C72B56D2D000D007A1 /* JAChatTextView.swift in Sources */,
 				12A9A5BB2B56C58100D007A1 /* JAChatView.swift in Sources */,
 				120D64162B55B3E500BDCB00 /* AppDelegate.swift in Sources */,

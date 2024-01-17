@@ -40,79 +40,10 @@
             </objects>
             <point key="canvasLocation" x="-387" y="-65"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="bdg-1Y-yUs">
-            <objects>
-                <viewController id="gxl-9i-JAq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IFQ-Ew-JYJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMR-q9-hMK">
-                                <rect key="frame" x="69.666666666666686" y="373.66666666666669" width="254" height="130"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlg-pf-tCA">
-                                        <rect key="frame" x="0.0" y="0.0" width="101" height="65"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="56"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assistant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMo-50-mmX">
-                                        <rect key="frame" x="0.0" y="65" width="254" height="65"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="56"/>
-                                        <color key="textColor" systemColor="linkColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wlg-pf-tCA" secondAttribute="trailing" constant="16" id="L9c-16-hgX"/>
-                                    <constraint firstItem="zMo-50-mmX" firstAttribute="leading" secondItem="fMR-q9-hMK" secondAttribute="leading" id="bF6-ZU-kDU"/>
-                                    <constraint firstItem="wlg-pf-tCA" firstAttribute="leading" secondItem="fMR-q9-hMK" secondAttribute="leading" id="drW-lD-gkq"/>
-                                    <constraint firstItem="wlg-pf-tCA" firstAttribute="top" secondItem="fMR-q9-hMK" secondAttribute="top" id="pQJ-Lc-aXH"/>
-                                    <constraint firstItem="zMo-50-mmX" firstAttribute="top" secondItem="wlg-pf-tCA" secondAttribute="bottom" id="ptj-gS-KdF"/>
-                                    <constraint firstAttribute="trailing" secondItem="zMo-50-mmX" secondAttribute="trailing" id="veE-xY-RP9"/>
-                                    <constraint firstAttribute="bottom" secondItem="zMo-50-mmX" secondAttribute="bottom" id="z2O-oE-G26"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7k-LJ-10G">
-                                <rect key="frame" x="50" y="736" width="293" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0c3-EL-eyS"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="BPm-3p-atQ"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Sign In with LinkedIn">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="E31-aW-TI5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="H7k-LJ-10G" firstAttribute="centerX" secondItem="E31-aW-TI5" secondAttribute="centerX" id="J1O-3D-gPX"/>
-                            <constraint firstItem="fMR-q9-hMK" firstAttribute="centerY" secondItem="IFQ-Ew-JYJ" secondAttribute="centerY" constant="12.666666666666686" id="fxX-Jf-IOg"/>
-                            <constraint firstItem="H7k-LJ-10G" firstAttribute="leading" secondItem="E31-aW-TI5" secondAttribute="leading" priority="999" constant="50" id="nrH-th-5r0"/>
-                            <constraint firstItem="E31-aW-TI5" firstAttribute="bottom" secondItem="H7k-LJ-10G" secondAttribute="bottom" constant="32" id="xxO-6Y-ccq"/>
-                            <constraint firstItem="fMR-q9-hMK" firstAttribute="centerX" secondItem="IFQ-Ew-JYJ" secondAttribute="centerX" id="yck-7e-hvS"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E73-0f-tdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-387" y="642"/>
-        </scene>
     </scenes>
     <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
