@@ -1,6 +1,33 @@
 ## Build generated
 build/
 DerivedData/
+Job Assistant.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
 
 Job Assistant/EnvironmentVariables.swift
 Job Assistant/env-vars.sh
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+*.xcuserstate
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+
+## DSStores
+*.DS_Store
+
+Archives/
