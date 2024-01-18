@@ -101,6 +101,7 @@ struct JAChatView: View {
             .onSubmit {
                 if (userInput.count > 0) {
                     itemStore.append(JAChatTextItem(title: userInput, isUserReply: true))
+//                    itemStore.didEnterQuery(userInput)
                     userInput = ""
                 }
             }
@@ -108,46 +109,46 @@ struct JAChatView: View {
     
     func barView() -> some View {
         return HStack {
-                textField()
-                Button {
-                    if (userInput.count > 0) {
-                        itemStore.append(JAChatTextItem(title: userInput, isUserReply: true))
-                        userInput = ""
-                    }
-                } label: {
-                    Image(systemName: "paperplane.circle.fill")
-                        .resizable()
-                        .renderingMode(.template)
-                        .foregroundColor(Color.blue)
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: 34, alignment: .trailing)
-                        .rotationEffect(.degrees(45))
-                }.buttonStyle(PlainButtonStyle())
-            }
-            .padding(.top, 4)
-            .padding(.bottom, 8)
-            .padding(.horizontal, 16)
+            textField()
+            Button {
+                if (userInput.count > 0) {
+                    itemStore.append(JAChatTextItem(title: userInput, isUserReply: true))
+                    userInput = ""
+                }
+            } label: {
+                Image(systemName: "paperplane.circle.fill")
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundColor(Color.blue)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 34, alignment: .trailing)
+                    .rotationEffect(.degrees(45))
+            }.buttonStyle(PlainButtonStyle())
         }
+        .padding(.top, 4)
+        .padding(.bottom, 8)
+        .padding(.horizontal, 16)
+    }
     
     var body: some View {
-            ScrollViewReader { scroller in
-                sectionView()
-                    .environmentObject(itemStore)
-                    .onChange(of: itemStore.items.count) { oldValue, newValue in
-                        withAnimation {
-                            scroller.scrollTo(itemStore.items.last?.id, anchor: .top)
-                        }
-                    }.onChange(of: itemStore.updateScroll) { oldValue, newValue in
-                        withAnimation {
-                            if (itemStore.shouldScrollToBottom) {
-                                scroller.scrollTo(itemStore.items.last?.id, anchor: .bottom)
-                            }
-                        }
-                    }.onTapGesture {
-                        endEditing()
+        ScrollViewReader { scroller in
+            sectionView()
+                .environmentObject(itemStore)
+                .onChange(of: itemStore.items.count) { oldValue, newValue in
+                    withAnimation {
+                        scroller.scrollTo(itemStore.items.last?.id, anchor: .top)
                     }
-            }
-            barView()
+                }.onChange(of: itemStore.updateScroll) { oldValue, newValue in
+                    withAnimation {
+                        if (itemStore.shouldScrollToBottom) {
+                            scroller.scrollTo(itemStore.items.last?.id, anchor: .bottom)
+                        }
+                    }
+                }.onTapGesture {
+                    endEditing()
+                }
+        }
+        barView()
     }
 }
 

@@ -20,6 +20,12 @@
 		12A9A5C72B56D2D000D007A1 /* JAChatTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A9A5C62B56D2D000D007A1 /* JAChatTextView.swift */; };
 		12B2EA752B581C96006C934D /* EnvironmentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B2EA742B581C96006C934D /* EnvironmentVariables.swift */; };
 		12B2EA772B5820DD006C934D /* AddEnvironmentVariables.rb in Resources */ = {isa = PBXBuildFile; fileRef = 12B2EA762B5820DD006C934D /* AddEnvironmentVariables.rb */; };
+		12B2EA7E2B582FD9006C934D /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 12B2EA7D2B582FD9006C934D /* OpenAI */; };
+		12B4BEF02B596E800062A9EB /* JAOpenAIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4BEEF2B596E800062A9EB /* JAOpenAIManager.swift */; };
+		12B4BF162B5975C30062A9EB /* JobAssistantModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12B4BF142B5975C30062A9EB /* JobAssistantModel.xcdatamodeld */; };
+		12B4BF182B5979C00062A9EB /* JAKeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4BF172B5979C00062A9EB /* JAKeychainManager.swift */; };
+		12B4BF1A2B5989650062A9EB /* JADataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4BF192B5989650062A9EB /* JADataManager.swift */; };
+		FB42C14AA204A32494E461CD /* Pods_Job_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E92A5D78AF0CD31EC4CBA9 /* Pods_Job_Assistant.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +45,13 @@
 		12B2EA732B581BEA006C934D /* env-vars.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "env-vars.sh"; sourceTree = "<group>"; };
 		12B2EA742B581C96006C934D /* EnvironmentVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariables.swift; sourceTree = "<group>"; };
 		12B2EA762B5820DD006C934D /* AddEnvironmentVariables.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AddEnvironmentVariables.rb; sourceTree = "<group>"; };
+		12B4BEEF2B596E800062A9EB /* JAOpenAIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAOpenAIManager.swift; sourceTree = "<group>"; };
+		12B4BF152B5975C30062A9EB /* JobAssistantModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JobAssistantModel.xcdatamodel; sourceTree = "<group>"; };
+		12B4BF172B5979C00062A9EB /* JAKeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAKeychainManager.swift; sourceTree = "<group>"; };
+		12B4BF192B5989650062A9EB /* JADataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JADataManager.swift; sourceTree = "<group>"; };
+		1F41666DDCC60306AEB8B482 /* Pods-Job Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Job Assistant.release.xcconfig"; path = "Target Support Files/Pods-Job Assistant/Pods-Job Assistant.release.xcconfig"; sourceTree = "<group>"; };
+		73E92A5D78AF0CD31EC4CBA9 /* Pods_Job_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Job_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7892A5C42DFAC9EDF6D1891 /* Pods-Job Assistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Job Assistant.debug.xcconfig"; path = "Target Support Files/Pods-Job Assistant/Pods-Job Assistant.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12B2EA7E2B582FD9006C934D /* OpenAI in Frameworks */,
+				FB42C14AA204A32494E461CD /* Pods_Job_Assistant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +72,8 @@
 			children = (
 				120D64142B55B3E500BDCB00 /* Job Assistant */,
 				120D64132B55B3E500BDCB00 /* Products */,
+				763EDA75B7419C1C9F2F030A /* Pods */,
+				9A4ACBB22D252873017E2434 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,8 +88,12 @@
 		120D64142B55B3E500BDCB00 /* Job Assistant */ = {
 			isa = PBXGroup;
 			children = (
+				12B4BF1B2B598F650062A9EB /* Models */,
+				12B4BEEE2B596D8B0062A9EB /* Managers */,
+				12A9A5BF2B56C85A00D007A1 /* Chat Store */,
 				12A9A5B92B56C57200D007A1 /* Chat Views */,
 				120D64152B55B3E500BDCB00 /* AppDelegate.swift */,
+				12B4BF142B5975C30062A9EB /* JobAssistantModel.xcdatamodeld */,
 				120D64172B55B3E500BDCB00 /* SceneDelegate.swift */,
 				120D641B2B55B3E500BDCB00 /* Main.storyboard */,
 				12B2EA732B581BEA006C934D /* env-vars.sh */,
@@ -89,7 +110,6 @@
 		12A9A5B92B56C57200D007A1 /* Chat Views */ = {
 			isa = PBXGroup;
 			children = (
-				12A9A5BF2B56C85A00D007A1 /* Chat Store */,
 				12A9A5BC2B56C77B00D007A1 /* Chat Components */,
 				12A9A5BA2B56C58100D007A1 /* JAChatView.swift */,
 				12A9A5C42B56CC5800D007A1 /* JACommons.swift */,
@@ -114,6 +134,40 @@
 			path = "Chat Store";
 			sourceTree = "<group>";
 		};
+		12B4BEEE2B596D8B0062A9EB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				12B4BEEF2B596E800062A9EB /* JAOpenAIManager.swift */,
+				12B4BF172B5979C00062A9EB /* JAKeychainManager.swift */,
+				12B4BF192B5989650062A9EB /* JADataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		12B4BF1B2B598F650062A9EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		763EDA75B7419C1C9F2F030A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7892A5C42DFAC9EDF6D1891 /* Pods-Job Assistant.debug.xcconfig */,
+				1F41666DDCC60306AEB8B482 /* Pods-Job Assistant.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9A4ACBB22D252873017E2434 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73E92A5D78AF0CD31EC4CBA9 /* Pods_Job_Assistant.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -121,10 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 120D64262B55B3E600BDCB00 /* Build configuration list for PBXNativeTarget "Job Assistant" */;
 			buildPhases = (
+				C564E3C6F376A28C9828186F /* [CP] Check Pods Manifest.lock */,
 				12B2EA782B58215F006C934D /* ShellScript */,
 				120D640E2B55B3E500BDCB00 /* Sources */,
 				120D640F2B55B3E500BDCB00 /* Frameworks */,
 				120D64102B55B3E500BDCB00 /* Resources */,
+				4997126DB0AE64F8AE240271 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +188,7 @@
 			);
 			name = "Job Assistant";
 			packageProductDependencies = (
+				12B2EA7D2B582FD9006C934D /* OpenAI */,
 			);
 			productName = "Job Assistant";
 			productReference = 120D64122B55B3E500BDCB00 /* Job Assistant.app */;
@@ -162,6 +219,7 @@
 			);
 			mainGroup = 120D64092B55B3E400BDCB00;
 			packageReferences = (
+				12B2EA7C2B582FD9006C934D /* XCRemoteSwiftPackageReference "OpenAI" */,
 			);
 			productRefGroup = 120D64132B55B3E500BDCB00 /* Products */;
 			projectDirPath = "";
@@ -204,6 +262,45 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ -f './Job Assistant/env-vars.sh' ]\nthen\nsource './Job Assistant/env-vars.sh'\nfi\n\"$SRCROOT\"/Job\\ Assistant/AddEnvironmentVariables.rb\n";
 		};
+		4997126DB0AE64F8AE240271 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Job Assistant/Pods-Job Assistant-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Job Assistant/Pods-Job Assistant-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Job Assistant/Pods-Job Assistant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C564E3C6F376A28C9828186F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Job Assistant-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -211,12 +308,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12B4BF162B5975C30062A9EB /* JobAssistantModel.xcdatamodeld in Sources */,
 				12A9A5C52B56CC5800D007A1 /* JACommons.swift in Sources */,
 				12A9A5B82B56C53200D007A1 /* JAChatViewController.swift in Sources */,
 				12B2EA752B581C96006C934D /* EnvironmentVariables.swift in Sources */,
+				12B4BF1A2B5989650062A9EB /* JADataManager.swift in Sources */,
+				12B4BF182B5979C00062A9EB /* JAKeychainManager.swift in Sources */,
 				12A9A5C72B56D2D000D007A1 /* JAChatTextView.swift in Sources */,
 				12A9A5BB2B56C58100D007A1 /* JAChatView.swift in Sources */,
 				120D64162B55B3E500BDCB00 /* AppDelegate.swift in Sources */,
+				12B4BEF02B596E800062A9EB /* JAOpenAIManager.swift in Sources */,
 				120D64182B55B3E500BDCB00 /* SceneDelegate.swift in Sources */,
 				12A9A5BE2B56C79E00D007A1 /* JAChatTypingIndicatorView.swift in Sources */,
 				12A9A5C32B56C89700D007A1 /* JAChatItemStore.swift in Sources */,
@@ -366,6 +467,7 @@
 		};
 		120D64272B55B3E600BDCB00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7892A5C42DFAC9EDF6D1891 /* Pods-Job Assistant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -395,6 +497,7 @@
 		};
 		120D64282B55B3E600BDCB00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F41666DDCC60306AEB8B482 /* Pods-Job Assistant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -444,6 +547,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		12B2EA7C2B582FD9006C934D /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		12B2EA7D2B582FD9006C934D /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12B2EA7C2B582FD9006C934D /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		12B4BF142B5975C30062A9EB /* JobAssistantModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				12B4BF152B5975C30062A9EB /* JobAssistantModel.xcdatamodel */,
+			);
+			currentVersion = 12B4BF152B5975C30062A9EB /* JobAssistantModel.xcdatamodel */;
+			path = JobAssistantModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 120D640A2B55B3E400BDCB00 /* Project object */;
 }
