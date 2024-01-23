@@ -43,6 +43,6 @@ import SwiftUI
     }
     
     @objc func didPressClearBtn() {
-        
+        self.chatView?.itemStore.didPressClearBtn()
     }
 }

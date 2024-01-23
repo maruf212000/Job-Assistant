@@ -26,7 +26,7 @@ struct JAChatTypingIndicatorView: View {
                 .animation(.easeIn(duration: 1).repeatForever(autoreverses: true), value: isTyping)
         }
         .padding(16)
-        .background(Color.secondary)
+        .background(Color(uiColor: .secondarySystemBackground))
         .cornerRadius(20)
         .onAppear{
             isTyping.toggle()

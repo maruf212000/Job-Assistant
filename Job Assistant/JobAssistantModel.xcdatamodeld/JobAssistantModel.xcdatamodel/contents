@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23C71" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Education" representedClassName="JAEducationEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="college_name" attributeType="String"/>
+        <attribute name="degree_name" attributeType="String"/>
+        <attribute name="end_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="start_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="userprofile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserProfile" inverseName="educations" inverseEntity="UserProfile"/>
+    </entity>
+    <entity name="Experience" representedClassName="JAExperienceEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="company_name" attributeType="String"/>
+        <attribute name="details" optional="YES" attributeType="String"/>
+        <attribute name="end_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isPresent" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="job_title" attributeType="String"/>
+        <attribute name="start_date" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="userprofile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserProfile" inverseName="experiences" inverseEntity="UserProfile"/>
+    </entity>
+    <entity name="Jobs" representedClassName="JAJobEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="apply_link" optional="YES" attributeType="String"/>
+        <attribute name="company_name" attributeType="String"/>
+        <attribute name="job_description" attributeType="String"/>
+        <attribute name="job_id" attributeType="String"/>
+        <attribute name="job_role" attributeType="String"/>
+    </entity>
+    <entity name="Project" representedClassName="JAProjectEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="project_details" optional="YES" attributeType="String"/>
+        <attribute name="project_title" attributeType="String"/>
+        <relationship name="userprofile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserProfile" inverseName="projects" inverseEntity="UserProfile"/>
+    </entity>
+    <entity name="UserProfile" representedClassName="JAUserProfileEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="certificates" optional="YES" attributeType="Binary" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="email" attributeType="String"/>
+        <attribute name="interests" optional="YES" attributeType="Binary" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="linkedin" optional="YES" attributeType="String"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="phone" attributeType="String"/>
+        <attribute name="skills" optional="YES" attributeType="Binary" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="tagline" optional="YES" attributeType="String"/>
+        <relationship name="educations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Education" inverseName="userprofile" inverseEntity="Education"/>
+        <relationship name="experiences" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Experience" inverseName="userprofile" inverseEntity="Experience"/>
+        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="userprofile" inverseEntity="Project"/>
+    </entity>
+</model>
