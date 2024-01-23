@@ -9,9 +9,9 @@ import Foundation
 
 let kKeychain = JAKeychainManager.shared
 
-let coreDataKeyTag = "com.ssms.jobAssistant.coredatadb"
-
 class JAKeychainManager {
+    let coreDataKeyTag = "com.ssms.jobAssistant.coredatadb"
+    let serviceIdentifier = "com.ssms.jobAssistant"
     
     static let shared: JAKeychainManager = {
         let instance = JAKeychainManager()
@@ -39,38 +39,46 @@ class JAKeychainManager {
     }
     
     func keyFromKeychain(for tag: String) -> String? {
-        let query = [
-            kSecClass as String: kSecClassKey,
-            kSecAttrApplicationTag as String: tag,
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: serviceIdentifier,
+            kSecAttrAccount as String: coreDataKeyTag,
             kSecReturnData as String: true
-        ] as [String: Any]
+        ]
         
-        var result: AnyObject?
-        let status = SecItemCopyMatching(query as CFDictionary, &result)
+        var item: CFTypeRef?
+        let status = SecItemCopyMatching(query as CFDictionary, &item)
         
-        if status == errSecSuccess, let keyData = result as? String {
-            return keyData
-        } else {
+        guard status == errSecSuccess, let keyData = item as? Data else {
+            print("Error fetching encryption key from Keychain. Status: \(status)")
             return nil
         }
+        
+        return String(data: keyData, encoding: .utf8)
     }
     
     private func generateAndStoreKeyInKeychain() -> String? {
         let newKey = UUID().uuidString // 256-bit key for example
-        
-        let query = [
-            kSecClass as String: kSecClassKey,
-            kSecAttrApplicationTag as String: coreDataKeyTag,
-            kSecValueData as String: newKey
-        ] as [String: Any]
-        
-        let status = SecItemAdd(query as CFDictionary, nil)
-        
-        if status == errSecSuccess {
+        if let data = newKey.data(using: .utf8) {
+            let query: [String: Any] = [
+                kSecClass as String: kSecClassGenericPassword,
+                kSecAttrService as String: serviceIdentifier,
+                kSecAttrAccount as String: coreDataKeyTag,
+                kSecValueData as String: data
+            ]
+            
+            SecItemDelete(query as CFDictionary)
+            
+            let status = SecItemAdd(query as CFDictionary, nil)
+            guard status == errSecSuccess else {
+                print("Error saving encryption key to Keychain. Status: \(status)")
+                return nil
+            }
+            print("Encryption key saved to Keychain.")
             return newKey
-        } else {
-            return nil
         }
+        print("Data is nil while saving key to keychain item")
+        return nil
     }
     
     func save(password: String, for key: String, in account: String) throws {
