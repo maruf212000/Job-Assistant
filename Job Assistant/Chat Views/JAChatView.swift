@@ -199,7 +199,7 @@ struct JAChatView: View {
                 .environmentObject(itemStore)
                 .onChange(of: itemStore.items.count) { oldValue, newValue in
                     withAnimation {
-                        if (itemStore.shouldScrollToBottom) {
+                        if (itemStore.shouldScrollToBottom && itemStore.items.last?.type != .chatItemSuggestionType) {
                             scroller.scrollTo(itemStore.items.last?.id, anchor: .top)
                         }
                     }

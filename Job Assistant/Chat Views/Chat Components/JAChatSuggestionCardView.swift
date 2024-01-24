@@ -16,6 +16,7 @@ struct JAChatSuggestionCardView: View {
         VStack {
             HStack {
                 Text(item.title)
+                    .font(.system(size: 15))
                     .lineLimit(2)
                     .foregroundColor(Color.white)
                 Image(systemName: "arrow.up.forward")

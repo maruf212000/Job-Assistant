@@ -142,7 +142,6 @@ class JADataManager {
     }
     
     func getJSONFromCoreDataEntity(managedObject: NSManagedObject) -> Dictionary<String, Any> {
-        // Convert managed object attributes to a dictionary
         let attributes = managedObject.entity.attributesByName
         var dictionary: [String: Any] = [:]
         

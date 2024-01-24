@@ -111,6 +111,8 @@ class JAChatItemsStore: ObservableObject {
     var tempItems: Array<JAChatItem> = []
     var isOptionsAnimating: Bool = false
     var shouldScrollToBottom: Bool = false
+    var questions: [String] = []
+    var todos: [String] = []
     
     func initializeChat() {
         self.items.append(JAChatItem(type: .chatItemTypingIndicatorType))
@@ -171,37 +173,48 @@ class JAChatItemsStore: ObservableObject {
                 } progressHandler: { progress in
                     item.fill(delta: progress)
                 } extractedDataHandler: { questions, todos in
-                    var newItems: [JAChatItem] = []
-                    var count = 0
-                    for question in questions {
-                        if (count > 2) {
-                            break
-                        }
-                        if (question.count > 0) {
-                            newItems.append(JAChatSuggestionItem(title: question))
-                            count += 1
-                        }
-                    }
-                    for todo in todos {
-                        if (count > 2) {
-                            break
-                        }
-                        if (todo.count > 0) {
-                            newItems.append(JAChatSuggestionItem(title: todo))
-                            count += 1
-                        }
-                    }
-                    DispatchQueue.main.async {
-                        self.shouldScrollToBottom = false
-                        self.items.append(contentsOf: newItems)
-                        self.shouldScrollToBottom = true
-                    }
+                    self.questions = questions
+                    self.todos = todos
+                    self.suggestActions()
                 } completionHandler: { answer in
                     item.complete(answer: answer)
                 }
                 self.append(item)
             }
         }
+    }
+    
+    func suggestActions() {
+        DispatchQueue.main.async {
+            var newItems: [JAChatItem] = []
+            var count = 0
+            for question in self.questions {
+                if (count > 2) {
+                    break
+                }
+                if (question.count > 0) {
+                    newItems.append(JAChatSuggestionItem(title: question))
+                    count += 1
+                }
+            }
+            for todo in self.todos {
+                if (count > 2) {
+                    break
+                }
+                if (todo.count > 0) {
+                    newItems.append(JAChatSuggestionItem(title: todo))
+                    count += 1
+                }
+            }
+            self.shouldScrollToBottom = false
+            self.items.append(contentsOf: newItems)
+            self.shouldScrollToBottom = true
+        }
+    }
+    
+    func removeSuggested(term: String) {
+        self.questions.removeAll { $0 == term }
+        self.todos.removeAll { $0 == term }
     }
     
     func chatHistory() -> [Chat] {
@@ -224,6 +237,9 @@ class JAChatItemsStore: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             let item: JAAnswerTextItem = JAAnswerTextItem()
             self.shouldScrollToBottom = true
+            if (isFromSuggestionItem) {
+                self.removeSuggested(term: term)
+            }
             let query = isFromSuggestionItem ? "Answer this on behalf of user based on my resume provided above: " + term : term
             kOpenAI.stream(for: query, history: self.chatHistory()) { rayId in
                 item.identify(rayId: rayId)
@@ -233,6 +249,7 @@ class JAChatItemsStore: ObservableObject {
                 item.fill(delta: progress)
             } completionHandler: { answer in
                 item.complete(answer: answer)
+                self.suggestActions()
             }
             self.append(item)
         }
